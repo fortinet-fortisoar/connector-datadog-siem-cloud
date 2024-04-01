@@ -11,7 +11,7 @@ from .operations import operations, check_health_ex
 logger = get_logger("datadog-siem-cloud")
 
 
-class KnowB4PhishER(Connector):
+class DataDog(Connector):
     def execute(self, config, operation, params, **kwargs):
         try:
             operation = operations.get(operation)

@@ -602,7 +602,7 @@
         }
       ],
       "name": "Sample - Datadog SIEM Cloud - 1.0.0",
-      "description": "",
+      "description": "Datadog SIEM Cloud is a real time threat detection platform paired with rich observability context to achieve faster security outcomes.",
       "visible": true,
       "recordTags": [
         "Datadog",
