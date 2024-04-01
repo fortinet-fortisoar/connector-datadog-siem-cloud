@@ -1,0 +1,613 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "c8ef962d-4f17-4e30-b4b0-84836044b417",
+      "@type": "WorkflowCollection",
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "12032791-c586-4c58-8007-5c3ff785ef6b",
+          "collection": "/api/3/workflow_collections/c8ef962d-4f17-4e30-b4b0-84836044b417",
+          "steps": [
+            {
+              "uuid": "19be2672-2289-4110-a17e-cd757b87a954",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "b395b262-771b-4ce5-8311-832745c2c99b",
+              "@type": "WorkflowStep",
+              "name": "Get Incidents",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Datadog SIEM Cloud",
+                "config": "''",
+                "params": {
+                  "include": "",
+                  "page_offset": "",
+                  "page_size": ""
+                },
+                "version": "1.0.0",
+                "connector": "datadog-siem-cloud",
+                "operation": "get_incidents",
+                "operationTitle": "Get Incidents"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves the detailed list of incidents based on the parameters that you have specified.",
+          "name": "Get Incidents",
+          "tag": "#Datadog SIEM Cloud",
+          "recordTags": [
+            "Datadog",
+            "datadog-siem-cloud"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/19be2672-2289-4110-a17e-cd757b87a954",
+          "routes": [
+            {
+              "uuid": "2a89e36e-bf67-45fa-a5df-eb3a971da672",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Incidents",
+              "sourceStep": "/api/3/workflow_steps/19be2672-2289-4110-a17e-cd757b87a954",
+              "targetStep": "/api/3/workflow_steps/b395b262-771b-4ce5-8311-832745c2c99b"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "5efcdbd3-a8ee-4d5f-82cf-29deec832ee1",
+          "collection": "/api/3/workflow_collections/c8ef962d-4f17-4e30-b4b0-84836044b417",
+          "steps": [
+            {
+              "uuid": "bb8244f8-608b-49f8-9a97-5f6e30b8c7fa",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "0371c26d-b7d9-4a5a-8fd3-2b9f2ffd0480",
+              "@type": "WorkflowStep",
+              "name": "Get Incident Details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Datadog SIEM Cloud",
+                "config": "''",
+                "params": {
+                  "incident_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "datadog-siem-cloud",
+                "operation": "get_incident_details",
+                "operationTitle": "Get Incident Details"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves the incident details based on the incident ID that you have specified.",
+          "name": "Get Incident Details",
+          "tag": "#Datadog SIEM Cloud",
+          "recordTags": [
+            "Datadog",
+            "datadog-siem-cloud"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/bb8244f8-608b-49f8-9a97-5f6e30b8c7fa",
+          "routes": [
+            {
+              "uuid": "ef8d6fa3-90bd-42ad-9b30-770a600666b0",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Incident Details",
+              "sourceStep": "/api/3/workflow_steps/bb8244f8-608b-49f8-9a97-5f6e30b8c7fa",
+              "targetStep": "/api/3/workflow_steps/0371c26d-b7d9-4a5a-8fd3-2b9f2ffd0480"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "0afede8a-7176-4655-832b-bd0f2777cea5",
+          "collection": "/api/3/workflow_collections/c8ef962d-4f17-4e30-b4b0-84836044b417",
+          "steps": [
+            {
+              "uuid": "8d62659a-13eb-4138-9f15-53cc6d7150b8",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "6cfb39c1-4328-447e-a763-4f3a9f72f677",
+              "@type": "WorkflowStep",
+              "name": "Search Incidents",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Datadog SIEM Cloud",
+                "config": "''",
+                "params": {
+                  "state": "",
+                  "severity": "",
+                  "customer_impacted": "",
+                  "detection_method": "",
+                  "sort": "",
+                  "include": "",
+                  "offset": "",
+                  "limit": ""
+                },
+                "version": "1.0.0",
+                "connector": "datadog-siem-cloud",
+                "operation": "search_incidents",
+                "operationTitle": "Search Incidents"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Search and retrieve the detailed list of incidents based on the parameters that you have specified.",
+          "name": "Search Incidents",
+          "tag": "#Datadog SIEM Cloud",
+          "recordTags": [
+            "Datadog",
+            "datadog-siem-cloud"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/8d62659a-13eb-4138-9f15-53cc6d7150b8",
+          "routes": [
+            {
+              "uuid": "d59db1bf-af16-42d5-ade2-fe9d89485462",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Search Incidents",
+              "sourceStep": "/api/3/workflow_steps/8d62659a-13eb-4138-9f15-53cc6d7150b8",
+              "targetStep": "/api/3/workflow_steps/6cfb39c1-4328-447e-a763-4f3a9f72f677"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "691aadf7-6390-4072-9c82-89bfd647f906",
+          "collection": "/api/3/workflow_collections/c8ef962d-4f17-4e30-b4b0-84836044b417",
+          "steps": [
+            {
+              "uuid": "ea352613-5471-4f8c-9ce6-6fe43ad5d6d2",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "052709c8-3967-4ca6-b0b9-811a4edc4478",
+              "@type": "WorkflowStep",
+              "name": "Update Incident",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Datadog SIEM Cloud",
+                "config": "''",
+                "params": {
+                  "incident_id": "",
+                  "customer_impact_end": "",
+                  "customer_impact_scope": "",
+                  "customer_impact_start": "",
+                  "customer_impacted": "",
+                  "detected": "",
+                  "state": "",
+                  "severity": "",
+                  "detection_method": "",
+                  "root_cause": "",
+                  "title": "",
+                  "summary": ""
+                },
+                "version": "1.0.0",
+                "connector": "datadog-siem-cloud",
+                "operation": "update_incident",
+                "operationTitle": "Update Incident"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Update an incident based on the parameters that you have specified.",
+          "name": "Update Incident",
+          "tag": "#Datadog SIEM Cloud",
+          "recordTags": [
+            "Datadog",
+            "datadog-siem-cloud"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/ea352613-5471-4f8c-9ce6-6fe43ad5d6d2",
+          "routes": [
+            {
+              "uuid": "3b78b149-4fdc-4069-9f7d-3e3d66c3f6bd",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Update Incident",
+              "sourceStep": "/api/3/workflow_steps/ea352613-5471-4f8c-9ce6-6fe43ad5d6d2",
+              "targetStep": "/api/3/workflow_steps/052709c8-3967-4ca6-b0b9-811a4edc4478"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "0a03e1fb-38ec-4f8f-8b99-e9ebcf130317",
+          "collection": "/api/3/workflow_collections/c8ef962d-4f17-4e30-b4b0-84836044b417",
+          "steps": [
+            {
+              "uuid": "f2b90a36-ebe5-47bc-804a-842beb47c2a1",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "cdb517e8-5566-4cbc-9d09-a9150842f216",
+              "@type": "WorkflowStep",
+              "name": "Search Events",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Datadog SIEM Cloud",
+                "config": "''",
+                "params": {
+                  "from": "",
+                  "to": "",
+                  "query": "",
+                  "time_difference": "",
+                  "sort": "",
+                  "cursor": "",
+                  "limit": ""
+                },
+                "version": "1.0.0",
+                "connector": "datadog-siem-cloud",
+                "operation": "search_events",
+                "operationTitle": "Search Events"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Search and retrieve the detailed list of events based on the parameters that you have specified.",
+          "name": "Search Events",
+          "tag": "#Datadog SIEM Cloud",
+          "recordTags": [
+            "Datadog",
+            "datadog-siem-cloud"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/f2b90a36-ebe5-47bc-804a-842beb47c2a1",
+          "routes": [
+            {
+              "uuid": "79a6a2d3-04ee-4910-9709-4bf038928bce",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Search Events",
+              "sourceStep": "/api/3/workflow_steps/f2b90a36-ebe5-47bc-804a-842beb47c2a1",
+              "targetStep": "/api/3/workflow_steps/cdb517e8-5566-4cbc-9d09-a9150842f216"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "f62abad0-9326-4c4a-9b42-882e4c1d6c48",
+          "collection": "/api/3/workflow_collections/c8ef962d-4f17-4e30-b4b0-84836044b417",
+          "steps": [
+            {
+              "uuid": "faaca925-bcce-497d-a157-18b9a8c291dd",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "2aea7008-b0d2-4631-a20f-d21c4584c1e2",
+              "@type": "WorkflowStep",
+              "name": "Get Event Details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Datadog SIEM Cloud",
+                "config": "''",
+                "params": {
+                  "event_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "datadog-siem-cloud",
+                "operation": "get_event_details",
+                "operationTitle": "Get Event Details"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves the event details based on the event ID that you have specified.",
+          "name": "Get Event Details",
+          "tag": "#Datadog SIEM Cloud",
+          "recordTags": [
+            "Datadog",
+            "datadog-siem-cloud"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/faaca925-bcce-497d-a157-18b9a8c291dd",
+          "routes": [
+            {
+              "uuid": "5622b651-c23c-493f-bb7c-52427c38f9e3",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Event Details",
+              "sourceStep": "/api/3/workflow_steps/faaca925-bcce-497d-a157-18b9a8c291dd",
+              "targetStep": "/api/3/workflow_steps/2aea7008-b0d2-4631-a20f-d21c4584c1e2"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "2721b14e-84dc-46b1-bf76-cafe1f097f70",
+          "collection": "/api/3/workflow_collections/c8ef962d-4f17-4e30-b4b0-84836044b417",
+          "steps": [
+            {
+              "uuid": "9344b897-e68b-45e3-9631-7de12512abfe",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "8e8de7e2-d83d-4717-af70-ddac72dbd8d3",
+              "@type": "WorkflowStep",
+              "name": "Get Hosts",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Datadog SIEM Cloud",
+                "config": "''",
+                "params": {
+                  "filter": "",
+                  "sort_field": "",
+                  "sort_dir": "",
+                  "start": "",
+                  "count": "",
+                  "_from": "",
+                  "include_muted_hosts_data": "",
+                  "include_hosts_metadata": ""
+                },
+                "version": "1.0.0",
+                "connector": "datadog-siem-cloud",
+                "operation": "get_hosts",
+                "operationTitle": "Get Hosts"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves detailed list of hosts for your organization based on the parameters that you have specified.",
+          "name": "Get Hosts",
+          "tag": "#Datadog SIEM Cloud",
+          "recordTags": [
+            "Datadog",
+            "datadog-siem-cloud"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/9344b897-e68b-45e3-9631-7de12512abfe",
+          "routes": [
+            {
+              "uuid": "5f049885-4e1e-440c-8547-b2a0a86f7ddf",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Hosts",
+              "sourceStep": "/api/3/workflow_steps/9344b897-e68b-45e3-9631-7de12512abfe",
+              "targetStep": "/api/3/workflow_steps/8e8de7e2-d83d-4717-af70-ddac72dbd8d3"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "866a3c06-9630-4c95-97ae-09fc2eb40c61",
+          "collection": "/api/3/workflow_collections/c8ef962d-4f17-4e30-b4b0-84836044b417",
+          "steps": [
+            {
+              "uuid": "53861966-ed66-4091-9ccb-82704bafab20",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "e9edf870-51d4-44a1-a31e-42b2516bda2f",
+              "@type": "WorkflowStep",
+              "name": "Get Attachments",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Datadog SIEM Cloud",
+                "config": "''",
+                "params": {
+                  "incident_id": "",
+                  "include": "",
+                  "filter": ""
+                },
+                "version": "1.0.0",
+                "connector": "datadog-siem-cloud",
+                "operation": "get_attachments",
+                "operationTitle": "Get Attachments"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves the detailed list of attachments based on the incident ID that you have specified.",
+          "name": "Get Attachments",
+          "tag": "#Datadog SIEM Cloud",
+          "recordTags": [
+            "Datadog",
+            "datadog-siem-cloud"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/53861966-ed66-4091-9ccb-82704bafab20",
+          "routes": [
+            {
+              "uuid": "20d22980-7f88-46db-b88d-a4fbfd327cfe",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Attachments",
+              "sourceStep": "/api/3/workflow_steps/53861966-ed66-4091-9ccb-82704bafab20",
+              "targetStep": "/api/3/workflow_steps/e9edf870-51d4-44a1-a31e-42b2516bda2f"
+            }
+          ]
+        }
+      ],
+      "name": "Sample - Datadog SIEM Cloud - 1.0.0",
+      "description": "",
+      "visible": true,
+      "recordTags": [
+        "Datadog",
+        "datadog-siem-cloud"
+      ]
+    }
+  ]
+}
