@@ -82,6 +82,20 @@ def incident_search_query(params):
             if len(query)
             else f"detection_method:{params['detection_method']}"
         )
+    if params.get("created_after"):
+        created_after = params['created_after'] if isinstance(params['created_after'], int) else int(datetime.strptime(params['created_after'], INPUT_DATE_FORMAT).timestamp())
+        query += (
+            f" AND created_after:{created_after}"
+            if len(query)
+            else f"created_after:{created_after}"
+        )
+    if params.get("created_before"):
+        created_before = params['created_before'] if isinstance(params['created_before'], int) else int(datetime.strptime(params['created_before'], INPUT_DATE_FORMAT).timestamp())
+        query += (
+            f" AND created_before:{created_before}"
+            if len(query)
+            else f"created_before:{created_before}"
+        )
     if not query:
         query = "state:(active OR stable OR resolved)"
     logger.info(f"query: {query}")
@@ -110,6 +124,13 @@ def get_incident_details(config, params):
         return response.to_dict()
 
 
+def get_incident_response(ob, incident_params):
+    with ApiClient(ob.datadog_config) as api_client:
+        api_instance = IncidentsApi(api_client)
+        incident_list_response = api_instance.search_incidents(**incident_params)
+        return incident_list_response.to_dict()
+
+
 def search_incidents(config, params):
     ob = DataDog(config)
     params = build_params(params)
@@ -127,10 +148,20 @@ def search_incidents(config, params):
     include and incident_params.update(include=include)
     logger.info(f"incident_params: {incident_params}")
     ob.datadog_config.unstable_operations["search_incidents"] = True
-    with ApiClient(ob.datadog_config) as api_client:
-        api_instance = IncidentsApi(api_client)
-        incident_list_response = api_instance.search_incidents(**incident_params)
-        return incident_list_response.to_dict()
+
+    if params.get("fetch_all_incidents"):
+        page_offset, page_size, total_incidents, incidents = 0, 2, [], []
+        while page_offset == 0 or incidents:
+            logger.info(f"fetching data for offset: {page_offset}")
+            incident_params.update({"page_offset": page_offset, "page_size": page_size})
+            resp = get_incident_response(ob, incident_params)
+            incidents = resp.get("data", {}).get("attributes", {}).get("incidents", [])
+            total_incidents = total_incidents + incidents
+            page_offset += page_size
+        resp["data"]["attributes"]["incidents"] = total_incidents
+        return resp
+    else:
+        return get_incident_response(ob, incident_params)
 
 
 def update_incident(config, params):

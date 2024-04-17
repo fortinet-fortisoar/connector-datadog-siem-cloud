@@ -8,6 +8,10 @@
   "cs_approved": true,
   "cs_compatible": true,
   "help_online": "",
+  "ingestion_supported": true,
+  "ingestion_modes": [
+    "scheduled"
+  ],
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "configuration": {
@@ -361,6 +365,26 @@
       "enabled": true,
       "parameters": [
         {
+          "title": "Start Datetime",
+          "name": "created_after",
+          "type": "datetime",
+          "description": "Specify the start date to filter the incidents.",
+          "tooltip": "Specify the start date to filter the incidents.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "End Datetime",
+          "name": "created_before",
+          "type": "datetime",
+          "description": "Specify the end date to filter the incidents.",
+          "tooltip": "Specify the end date to filter the incidents.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        },
+        {
           "title": "State",
           "name": "state",
           "type": "select",
@@ -464,6 +488,16 @@
           "type": "integer",
           "description": "Specify the number of records that the operation should fetch per page.",
           "tooltip": "Specify the number of records that the operation should fetch per page.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Fetch All Incidents",
+          "name": "fetch_all_incidents",
+          "type": "checkbox",
+          "description": "Select the checkbox to fetch all incidents.",
+          "tooltip": "Select the checkbox to fetch all incidents.",
           "required": false,
           "visible": true,
           "editable": true
