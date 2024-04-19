@@ -1,0 +1,1570 @@
+{
+  "name": "datadog-siem-cloud",
+  "version": "1.0.0",
+  "label": "Datadog SIEM Cloud",
+  "category": "Analytics and SIEM",
+  "description": "Datadog SIEM Cloud is a real time threat detection platform paired with rich observability context to achieve faster security outcomes.",
+  "publisher": "Fortinet",
+  "cs_approved": true,
+  "cs_compatible": true,
+  "help_online": "",
+  "ingestion_supported": true,
+  "ingestion_modes": [
+    "scheduled"
+  ],
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "name": "server_url",
+        "description": "Specify the server URL to connect and perform the automated operations.",
+        "tooltip": "Specify the server URL to connect and perform the automated operations.",
+        "type": "text",
+        "visible": true,
+        "editable": true,
+        "required": true,
+        "placeholder": "eg: https://us5.datadoghq.com"
+      },
+      {
+        "name": "api_key",
+        "title": "API Key",
+        "description": "Specify the API key to access the endpoint to connect and perform the automated operations",
+        "tooltip": "Specify the API key to access the endpoint to connect and perform the automated operations",
+        "type": "password",
+        "editable": true,
+        "visible": true,
+        "required": true
+      },
+      {
+        "name": "application_key",
+        "title": "Application Key",
+        "description": "Specify the Application key to access the endpoint to connect and perform the automated operations",
+        "tooltip": "Specify the Application key to access the endpoint to connect and perform the automated operations",
+        "type": "password",
+        "editable": true,
+        "visible": true,
+        "required": true
+      },
+      {
+        "title": "Verify SSL",
+        "name": "verify_ssl",
+        "description": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is selected, i.e., set to True.",
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified.",
+        "type": "checkbox",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "get_incidents",
+      "annotation": "get_incidents",
+      "title": "Get Incidents",
+      "description": "Retrieves the detailed list of incidents based on the parameters that you have specified.",
+      "category": "investigation",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Include",
+          "name": "include",
+          "type": "multiselect",
+          "description": "Specify which types of related objects should be included in the response.",
+          "tooltip": "Specify which types of related objects should be included in the response.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "options": [
+            "Users",
+            "Attachments"
+          ]
+        },
+        {
+          "title": "Offset",
+          "name": "page_offset",
+          "type": "integer",
+          "description": "Specify the offset from which to retrieve the records.",
+          "tooltip": "Specify the offset from which to retrieve the records.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Limit",
+          "name": "page_size",
+          "type": "integer",
+          "description": "Specify the number of records that the operation should fetch per page.",
+          "tooltip": "Specify the number of records that the operation should fetch per page.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        }
+      ],
+      "output_schema": {
+        "data": [
+          {
+            "id": "",
+            "type": "",
+            "attributes": {
+              "state": "",
+              "title": "",
+              "fields": {
+                "state": {
+                  "type": "",
+                  "value": ""
+                },
+                "teams": {
+                  "type": "",
+                  "value": ""
+                },
+                "summary": {
+                  "type": "",
+                  "value": ""
+                },
+                "services": {
+                  "type": "",
+                  "value": ""
+                },
+                "severity": {
+                  "type": "",
+                  "value": ""
+                },
+                "root_cause": {
+                  "type": "",
+                  "value": ""
+                },
+                "detection_method": {
+                  "type": "",
+                  "value": ""
+                }
+              },
+              "case_id": "",
+              "created": "",
+              "archived": "",
+              "detected": "",
+              "modified": "",
+              "resolved": "",
+              "severity": "",
+              "public_id": "",
+              "visibility": "",
+              "time_to_detect": "",
+              "time_to_repair": "",
+              "created_by_uuid": "",
+              "field_analytics": "",
+              "time_to_resolve": "",
+              "customer_impacted": "",
+              "incident_type_uuid": "",
+              "customer_impact_end": "",
+              "non_datadog_creator": "",
+              "notification_handles": [],
+              "customer_impact_scope": "",
+              "customer_impact_start": "",
+              "last_modified_by_uuid": "",
+              "creation_idempotency_key": "",
+              "customer_impact_duration": "",
+              "time_to_internal_response": ""
+            },
+            "relationships": {
+              "impacts": {
+                "data": []
+              },
+              "responders": {
+                "data": [
+                  {
+                    "id": "",
+                    "type": ""
+                  }
+                ]
+              },
+              "attachments": {
+                "data": []
+              },
+              "integrations": {
+                "data": []
+              },
+              "commander_user": {
+                "data": {
+                  "id": "",
+                  "type": ""
+                }
+              },
+              "created_by_user": {
+                "data": {
+                  "id": "",
+                  "type": ""
+                }
+              },
+              "user_defined_fields": {
+                "data": [
+                  {
+                    "id": "",
+                    "type": ""
+                  }
+                ]
+              },
+              "last_modified_by_user": {
+                "data": {
+                  "id": "",
+                  "type": ""
+                }
+              }
+            }
+          }
+        ],
+        "included": [],
+        "meta": {
+          "pagination": {
+            "size": "",
+            "offset": "",
+            "next_offset": ""
+          }
+        }
+      }
+    },
+    {
+      "operation": "get_incident_details",
+      "annotation": "get_incident_details",
+      "title": "Get Incident Details",
+      "description": "Retrieves the incident details based on the incident ID that you have specified.",
+      "category": "investigation",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Incident ID",
+          "name": "incident_id",
+          "type": "text",
+          "description": "Specify the incident ID for which you want to fetch the details.",
+          "tooltip": "Specify the incident ID for which you want to fetch the details.",
+          "required": true,
+          "visible": true,
+          "editable": true
+        }
+      ],
+      "output_schema": {
+        "data": {
+          "id": "",
+          "type": "",
+          "attributes": {
+            "state": "",
+            "title": "",
+            "fields": {
+              "state": {
+                "type": "",
+                "value": ""
+              },
+              "teams": {
+                "type": "",
+                "value": ""
+              },
+              "summary": {
+                "type": "",
+                "value": ""
+              },
+              "services": {
+                "type": "",
+                "value": ""
+              },
+              "severity": {
+                "type": "",
+                "value": ""
+              },
+              "root_cause": {
+                "type": "",
+                "value": ""
+              },
+              "detection_method": {
+                "type": "",
+                "value": ""
+              }
+            },
+            "case_id": "",
+            "created": "",
+            "archived": "",
+            "detected": "",
+            "modified": "",
+            "resolved": "",
+            "severity": "",
+            "public_id": "",
+            "visibility": "",
+            "time_to_detect": "",
+            "time_to_repair": "",
+            "created_by_uuid": "",
+            "field_analytics": "",
+            "time_to_resolve": "",
+            "customer_impacted": "",
+            "incident_type_uuid": "",
+            "customer_impact_end": "",
+            "non_datadog_creator": "",
+            "notification_handles": [],
+            "customer_impact_scope": "",
+            "customer_impact_start": "",
+            "last_modified_by_uuid": "",
+            "creation_idempotency_key": "",
+            "customer_impact_duration": "",
+            "time_to_internal_response": ""
+          },
+          "relationships": {
+            "impacts": {
+              "data": []
+            },
+            "responders": {
+              "data": [
+                {
+                  "id": "",
+                  "type": ""
+                }
+              ]
+            },
+            "attachments": {
+              "data": []
+            },
+            "integrations": {
+              "data": []
+            },
+            "commander_user": {
+              "data": {
+                "id": "",
+                "type": ""
+              }
+            },
+            "created_by_user": {
+              "data": {
+                "id": "",
+                "type": ""
+              }
+            },
+            "user_defined_fields": {
+              "data": [
+                {
+                  "id": "",
+                  "type": ""
+                }
+              ]
+            },
+            "last_modified_by_user": {
+              "data": {
+                "id": "",
+                "type": ""
+              }
+            }
+          }
+        },
+        "included": []
+      }
+    },
+    {
+      "operation": "search_incidents",
+      "annotation": "search_incidents",
+      "title": "Search Incidents",
+      "description": "Search and retrieve the detailed list of incidents based on the parameters that you have specified.",
+      "category": "investigation",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Start Datetime",
+          "name": "created_after",
+          "type": "datetime",
+          "description": "Specify the start date to filter the incidents.",
+          "tooltip": "Specify the start date to filter the incidents.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "End Datetime",
+          "name": "created_before",
+          "type": "datetime",
+          "description": "Specify the end date to filter the incidents.",
+          "tooltip": "Specify the end date to filter the incidents.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "State",
+          "name": "state",
+          "type": "select",
+          "description": "Specify the state of the incident to filter the results.",
+          "tooltip": "Specify the state of the incident to filter the results.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "options": [
+            "Active",
+            "Stable",
+            "Resolved"
+          ]
+        },
+        {
+          "title": "Severity",
+          "name": "severity",
+          "type": "select",
+          "description": "Specify the state of the incident to filter the results.",
+          "tooltip": "Specify the state of the incident to filter the results.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "options": [
+            "SEV-1 (Critical)",
+            "SEV-2 (High)",
+            "SEV-3 (Moderate)",
+            "SEV-4 (Low)",
+            "SEV-5 (Minor)",
+            "Unknown"
+          ]
+        },
+        {
+          "title": "Customer Impacted",
+          "name": "customer_impacted",
+          "type": "checkbox",
+          "description": "Select the checkbox to specify whether the incident caused customer impact.",
+          "tooltip": "Select the checkbox to specify whether the incident caused customer impact.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Detection Method",
+          "name": "detection_method",
+          "type": "select",
+          "description": "Specify how the incident was detected.",
+          "tooltip": "Specify how the incident was detected.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "options": [
+            "Customer",
+            "Employee",
+            "Monitor",
+            "Other",
+            "Unknown"
+          ]
+        },
+        {
+          "title": "Sort",
+          "name": "sort",
+          "type": "select",
+          "description": "Specify the order in which incidents should be returned.",
+          "tooltip": "Specify the order in which incidents should be returned.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "options": [
+            "Ascending",
+            "Descending"
+          ]
+        },
+        {
+          "title": "Include",
+          "name": "include",
+          "type": "select",
+          "description": "Specify which types of related objects should be included in the response.",
+          "tooltip": "Specify which types of related objects should be included in the response.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "options": [
+            "Users",
+            "Attachments"
+          ]
+        },
+        {
+          "title": "Offset",
+          "name": "offset",
+          "type": "integer",
+          "description": "Specify the offset from which to retrieve the records.",
+          "tooltip": "Specify the offset from which to retrieve the records.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Limit",
+          "name": "limit",
+          "type": "integer",
+          "description": "Specify the number of records that the operation should fetch per page.",
+          "tooltip": "Specify the number of records that the operation should fetch per page.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Fetch All Incidents",
+          "name": "fetch_all_incidents",
+          "type": "checkbox",
+          "description": "Select the checkbox to fetch all incidents.",
+          "tooltip": "Select the checkbox to fetch all incidents.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        }
+      ],
+      "output_schema": {
+        "data": {
+          "type": "",
+          "attributes": {
+            "total": "",
+            "facets": {
+              "state": [
+                {
+                  "name": "",
+                  "count": ""
+                }
+              ],
+              "fields": [
+                {
+                  "name": "",
+                  "facets": [
+                    {
+                      "name": "",
+                      "count": ""
+                    }
+                  ]
+                }
+              ],
+              "impact": [
+                {
+                  "name": "",
+                  "count": ""
+                }
+              ],
+              "severity": [
+                {
+                  "name": "",
+                  "count": ""
+                }
+              ],
+              "commander": [
+                {
+                  "name": "",
+                  "uuid": "",
+                  "count": "",
+                  "email": "",
+                  "handle": ""
+                }
+              ],
+              "responder": [
+                {
+                  "name": "",
+                  "uuid": "",
+                  "count": "",
+                  "email": "",
+                  "handle": ""
+                }
+              ],
+              "created_by": [
+                {
+                  "name": "",
+                  "uuid": "",
+                  "count": "",
+                  "email": "",
+                  "handle": ""
+                }
+              ],
+              "postmortem": [
+                {
+                  "name": "",
+                  "count": ""
+                }
+              ],
+              "visibility": [
+                {
+                  "name": "",
+                  "count": ""
+                }
+              ],
+              "time_to_repair": [
+                {
+                  "name": "",
+                  "aggregates": {
+                    "max": "",
+                    "min": ""
+                  }
+                }
+              ],
+              "time_to_resolve": [
+                {
+                  "name": "",
+                  "aggregates": {
+                    "max": "",
+                    "min": ""
+                  }
+                }
+              ],
+              "last_modified_by": [
+                {
+                  "name": "",
+                  "uuid": "",
+                  "count": "",
+                  "email": "",
+                  "handle": ""
+                }
+              ],
+              "customer_impacted": [
+                {
+                  "name": "",
+                  "count": ""
+                }
+              ]
+            },
+            "incidents": [
+              {
+                "data": {
+                  "id": "",
+                  "type": "",
+                  "attributes": {
+                    "state": "",
+                    "title": "",
+                    "fields": {
+                      "state": {
+                        "type": "",
+                        "value": ""
+                      },
+                      "teams": {
+                        "type": "",
+                        "value": ""
+                      },
+                      "summary": {
+                        "type": "",
+                        "value": ""
+                      },
+                      "services": {
+                        "type": "",
+                        "value": ""
+                      },
+                      "severity": {
+                        "type": "",
+                        "value": ""
+                      },
+                      "root_cause": {
+                        "type": "",
+                        "value": ""
+                      },
+                      "detection_method": {
+                        "type": "",
+                        "value": ""
+                      }
+                    },
+                    "case_id": "",
+                    "created": "",
+                    "archived": "",
+                    "detected": "",
+                    "modified": "",
+                    "resolved": "",
+                    "severity": "",
+                    "commander": {
+                      "data": {
+                        "id": "",
+                        "type": "",
+                        "attributes": {
+                          "icon": "",
+                          "name": "",
+                          "uuid": "",
+                          "email": "",
+                          "handle": ""
+                        }
+                      }
+                    },
+                    "public_id": "",
+                    "created_by": {
+                      "data": {
+                        "id": "",
+                        "type": "",
+                        "attributes": {
+                          "icon": "",
+                          "name": "",
+                          "uuid": "",
+                          "email": "",
+                          "handle": ""
+                        }
+                      }
+                    },
+                    "visibility": "",
+                    "time_to_detect": "",
+                    "time_to_repair": "",
+                    "created_by_uuid": "",
+                    "field_analytics": {
+                      "state": {
+                        "active": {
+                          "spans": [
+                            {
+                              "end": "",
+                              "start": ""
+                            }
+                          ],
+                          "duration": ""
+                        },
+                        "stable": {
+                          "spans": [
+                            {
+                              "end": "",
+                              "start": ""
+                            }
+                          ],
+                          "duration": ""
+                        }
+                      }
+                    },
+                    "time_to_resolve": "",
+                    "last_modified_by": {
+                      "data": {
+                        "id": "",
+                        "type": "",
+                        "attributes": {
+                          "icon": "",
+                          "name": "",
+                          "uuid": "",
+                          "email": "",
+                          "handle": ""
+                        }
+                      }
+                    },
+                    "customer_impacted": "",
+                    "incident_type_uuid": "",
+                    "customer_impact_end": "",
+                    "non_datadog_creator": "",
+                    "notification_handles": [],
+                    "customer_impact_scope": "",
+                    "customer_impact_start": "",
+                    "last_modified_by_uuid": "",
+                    "creation_idempotency_key": "",
+                    "customer_impact_duration": "",
+                    "time_to_internal_response": ""
+                  },
+                  "relationships": {
+                    "impacts": {
+                      "data": []
+                    },
+                    "responders": {
+                      "data": [
+                        {
+                          "id": "",
+                          "type": ""
+                        }
+                      ]
+                    },
+                    "attachments": {
+                      "data": []
+                    },
+                    "integrations": {
+                      "data": []
+                    },
+                    "commander_user": {
+                      "data": {
+                        "id": "",
+                        "type": ""
+                      }
+                    },
+                    "created_by_user": {
+                      "data": {
+                        "id": "",
+                        "type": ""
+                      }
+                    },
+                    "user_defined_fields": {
+                      "data": []
+                    },
+                    "last_modified_by_user": {
+                      "data": {
+                        "id": "",
+                        "type": ""
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "relationships": {
+            "incidents_relationship": {
+              "data": [
+                {
+                  "id": "",
+                  "type": ""
+                }
+              ]
+            }
+          }
+        },
+        "meta": {
+          "pagination": {
+            "size": "",
+            "offset": "",
+            "next_offset": ""
+          }
+        },
+        "included": [
+          {
+            "id": "",
+            "type": "",
+            "attributes": {
+              "state": "",
+              "title": "",
+              "fields": {
+                "state": {
+                  "type": "",
+                  "value": ""
+                },
+                "teams": {
+                  "type": "",
+                  "value": ""
+                },
+                "summary": {
+                  "type": "",
+                  "value": ""
+                },
+                "services": {
+                  "type": "",
+                  "value": ""
+                },
+                "severity": {
+                  "type": "",
+                  "value": ""
+                },
+                "root_cause": {
+                  "type": "",
+                  "value": ""
+                },
+                "detection_method": {
+                  "type": "",
+                  "value": ""
+                }
+              },
+              "case_id": "",
+              "created": "",
+              "archived": "",
+              "detected": "",
+              "modified": "",
+              "resolved": "",
+              "severity": "",
+              "commander": {
+                "data": {
+                  "id": "",
+                  "type": "",
+                  "attributes": {
+                    "icon": "",
+                    "name": "",
+                    "uuid": "",
+                    "email": "",
+                    "handle": ""
+                  }
+                }
+              },
+              "public_id": "",
+              "created_by": {
+                "data": {
+                  "id": "",
+                  "type": "",
+                  "attributes": {
+                    "icon": "",
+                    "name": "",
+                    "uuid": "",
+                    "email": "",
+                    "handle": ""
+                  }
+                }
+              },
+              "visibility": "",
+              "time_to_detect": "",
+              "time_to_repair": "",
+              "created_by_uuid": "",
+              "field_analytics": {
+                "state": {
+                  "active": {
+                    "spans": [
+                      {
+                        "end": "",
+                        "start": ""
+                      }
+                    ],
+                    "duration": ""
+                  },
+                  "stable": {
+                    "spans": [
+                      {
+                        "end": "",
+                        "start": ""
+                      }
+                    ],
+                    "duration": ""
+                  }
+                }
+              },
+              "time_to_resolve": "",
+              "last_modified_by": {
+                "data": {
+                  "id": "",
+                  "type": "",
+                  "attributes": {
+                    "icon": "",
+                    "name": "",
+                    "uuid": "",
+                    "email": "",
+                    "handle": ""
+                  }
+                }
+              },
+              "customer_impacted": "",
+              "incident_type_uuid": "",
+              "customer_impact_end": "",
+              "non_datadog_creator": "",
+              "notification_handles": [],
+              "customer_impact_scope": "",
+              "customer_impact_start": "",
+              "last_modified_by_uuid": "",
+              "creation_idempotency_key": "",
+              "customer_impact_duration": "",
+              "time_to_internal_response": ""
+            },
+            "relationships": {
+              "impacts": {
+                "data": []
+              },
+              "responders": {
+                "data": [
+                  {
+                    "id": "",
+                    "type": ""
+                  }
+                ]
+              },
+              "attachments": {
+                "data": []
+              },
+              "integrations": {
+                "data": []
+              },
+              "commander_user": {
+                "data": {
+                  "id": "",
+                  "type": ""
+                }
+              },
+              "created_by_user": {
+                "data": {
+                  "id": "",
+                  "type": ""
+                }
+              },
+              "user_defined_fields": {
+                "data": []
+              },
+              "last_modified_by_user": {
+                "data": {
+                  "id": "",
+                  "type": ""
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "operation": "update_incident",
+      "annotation": "update_incident",
+      "title": "Update Incident",
+      "description": "Update an incident based on the parameters that you have specified.",
+      "category": "investigation",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Incident ID",
+          "name": "incident_id",
+          "type": "text",
+          "description": "Specify the incident ID for which you want to update.",
+          "tooltip": "Specify the incident ID for which you want to update.",
+          "required": true,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Customer Impact End Date",
+          "name": "customer_impact_end",
+          "type": "datetime",
+          "description": "Specify the datetime when customers were no longer impacted by the incident.",
+          "tooltip": "Specify the datetime when customers were no longer impacted by the incident.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Customer Impact Scope",
+          "name": "customer_impact_scope",
+          "type": "text",
+          "description": "Specify the summary of the impact customers experienced during the incident.",
+          "tooltip": "Specify the summary of the impact customers experienced during the incident.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Customer Impact Start Date",
+          "name": "customer_impact_start",
+          "type": "datetime",
+          "description": "Specify the datetime when customers began being impacted by the incident.",
+          "tooltip": "Specify the datetime when customers began being impacted by the incident.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Customer Impacted",
+          "name": "customer_impacted",
+          "type": "checkbox",
+          "description": "Specify whether the incident caused customer impact.",
+          "tooltip": "Specify whether the incident caused customer impact.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Detected Date",
+          "name": "detected",
+          "type": "datetime",
+          "description": "Specify the datetime when the incident was detected.",
+          "tooltip": "Specify the datetime when the incident was detected.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "State",
+          "name": "state",
+          "type": "select",
+          "description": "Specify the state of the incident that you want to update.",
+          "tooltip": "Specify the state of the incident that you want to update.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "options": [
+            "Active",
+            "Stable",
+            "Resolved"
+          ]
+        },
+        {
+          "title": "Severity",
+          "name": "severity",
+          "type": "select",
+          "description": "Specify the severity of the incident that you want to update.",
+          "tooltip": "Specify the severity of the incident that you want to update.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "options": [
+            "SEV-1 (Critical)",
+            "SEV-2 (High)",
+            "SEV-3 (Moderate)",
+            "SEV-4 (Low)",
+            "SEV-5 (Minor)",
+            "Unknown"
+          ]
+        },
+        {
+          "title": "Detection Method",
+          "name": "detection_method",
+          "type": "select",
+          "description": "Specify how the incident was detected.",
+          "tooltip": "Specify how the incident was detected.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "options": [
+            "Customer",
+            "Employee",
+            "Monitor",
+            "Other",
+            "Unknown"
+          ]
+        },
+        {
+          "title": "Root Cause",
+          "name": "root_cause",
+          "type": "text",
+          "description": "Specify the description of the root cause, triggers and contributing factors of the incident.",
+          "tooltip": "Specify the description of the root cause, triggers and contributing factors of the incident.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "text",
+          "description": "Specify the title of the incident that you want to update.",
+          "tooltip": "Specify the title of the incident that you want to update.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Summary",
+          "name": "summary",
+          "type": "text",
+          "description": "Specify the summary of the incident that you want to update.",
+          "tooltip": "Specify the summary of the incident that you want to update.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        }
+      ],
+      "output_schema": {
+        "data": {
+          "id": "",
+          "type": "",
+          "attributes": {
+            "state": "",
+            "title": "",
+            "fields": {
+              "state": {
+                "type": "",
+                "value": ""
+              },
+              "teams": {
+                "type": "",
+                "value": ""
+              },
+              "summary": {
+                "type": "",
+                "value": ""
+              },
+              "services": {
+                "type": "",
+                "value": ""
+              },
+              "severity": {
+                "type": "",
+                "value": ""
+              },
+              "root_cause": {
+                "type": "",
+                "value": ""
+              },
+              "detection_method": {
+                "type": "",
+                "value": ""
+              }
+            },
+            "case_id": "",
+            "created": "",
+            "archived": "",
+            "detected": "",
+            "modified": "",
+            "resolved": "",
+            "severity": "",
+            "commander": {
+              "data": {
+                "id": "",
+                "type": "",
+                "attributes": {
+                  "icon": "",
+                  "name": "",
+                  "uuid": "",
+                  "email": "",
+                  "handle": ""
+                }
+              }
+            },
+            "public_id": "",
+            "created_by": {
+              "data": {
+                "id": "",
+                "type": "",
+                "attributes": {
+                  "icon": "",
+                  "name": "",
+                  "uuid": "",
+                  "email": "",
+                  "handle": ""
+                }
+              }
+            },
+            "visibility": "",
+            "time_to_detect": "",
+            "time_to_repair": "",
+            "created_by_uuid": "",
+            "field_analytics": "",
+            "time_to_resolve": "",
+            "last_modified_by": {
+              "data": {
+                "id": "",
+                "type": "",
+                "attributes": {
+                  "icon": "",
+                  "name": "",
+                  "uuid": "",
+                  "email": "",
+                  "handle": ""
+                }
+              }
+            },
+            "customer_impacted": "",
+            "incident_type_uuid": "",
+            "customer_impact_end": "",
+            "non_datadog_creator": "",
+            "notification_handles": [],
+            "customer_impact_scope": "",
+            "customer_impact_start": "",
+            "last_modified_by_uuid": "",
+            "creation_idempotency_key": "",
+            "customer_impact_duration": "",
+            "time_to_internal_response": ""
+          },
+          "relationships": {
+            "impacts": {
+              "data": []
+            },
+            "responders": {
+              "data": [
+                {
+                  "id": "",
+                  "type": ""
+                }
+              ]
+            },
+            "attachments": {
+              "data": []
+            },
+            "integrations": {
+              "data": []
+            },
+            "commander_user": {
+              "data": {
+                "id": "",
+                "type": ""
+              }
+            },
+            "created_by_user": {
+              "data": {
+                "id": "",
+                "type": ""
+              }
+            },
+            "user_defined_fields": {
+              "data": [
+                {
+                  "id": "",
+                  "type": ""
+                }
+              ]
+            },
+            "last_modified_by_user": {
+              "data": {
+                "id": "",
+                "type": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "operation": "search_events",
+      "annotation": "search_events",
+      "title": "Search Events",
+      "description": "Search and retrieve the detailed list of events based on the parameters that you have specified.",
+      "category": "investigation",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Start Datetime",
+          "name": "from",
+          "type": "datetime",
+          "description": "Specify the start date to filter the events. The default value is last 15 minutes",
+          "tooltip": "Specify the start date to filter the events. The default value is last 15 minutes",
+          "required": false,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "End Datetime",
+          "name": "to",
+          "type": "datetime",
+          "description": "Specify the end date to filter the events.",
+          "tooltip": "Specify the end date to filter the events.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Query",
+          "name": "query",
+          "type": "text",
+          "description": "Specify the event search query to filter the events.",
+          "tooltip": "Specify the event search query to filter the events.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Time Difference",
+          "name": "time_difference",
+          "description": "Specify the time difference. You can choose from the following: Time Offset, Timezone.",
+          "tooltip": "Specify the time difference. You can choose from the following: Time Offset, Timezone.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Time Offset",
+            "Timezone"
+          ],
+          "onchange": {
+            "Timezone": [
+              {
+                "title": "Timezone",
+                "name": "timezone",
+                "type": "text",
+                "tooltip": "Specify the timezone. The timezone can be specified as GMT, UTC, an offset from UTC (like UTC+1), or as a Timezone Database identifier (like America/New_York).",
+                "description": "Specify the timezone. The timezone can be specified as GMT, UTC, an offset from UTC (like UTC+1), or as a Timezone Database identifier (like America/New_York).",
+                "required": false,
+                "visible": true,
+                "editable": true
+              }
+            ],
+            "Time Offset": [
+              {
+                "title": "Time Offset",
+                "name": "time_offset",
+                "type": "integer",
+                "tooltip": "Specify the time offset to apply to the query in seconds.",
+                "description": "Specify the time offset to apply to the query in seconds.",
+                "required": false,
+                "visible": true,
+                "editable": true
+              }
+            ]
+          }
+        },
+        {
+          "title": "Sort",
+          "name": "sort",
+          "type": "select",
+          "description": "Specify the order in which events should be returned.",
+          "tooltip": "Specify the order in which events should be returned.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "options": [
+            "timestamp",
+            "-timestamp"
+          ]
+        },
+        {
+          "title": "Cursor",
+          "name": "cursor",
+          "type": "text",
+          "description": "Specify the returned paging point to use to get the next results.",
+          "tooltip": "Specify the returned paging point to use to get the next results.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Limit",
+          "name": "limit",
+          "type": "integer",
+          "description": "Specify the number of records that the operation should fetch per page.",
+          "tooltip": "Specify the number of records that the operation should fetch per page.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        }
+      ],
+      "output_schema": {
+        "data": [
+          {
+            "id": "",
+            "type": "",
+            "attributes": {
+              "tags": [],
+              "timestamp": "",
+              "attributes": {
+                "evt": {
+                  "id": "",
+                  "type": "",
+                  "source_id": ""
+                },
+                "title": "",
+                "status": "",
+                "service": "",
+                "hostname": "",
+                "priority": "",
+                "timestamp": ""
+              }
+            }
+          }
+        ],
+        "links": {
+          "next": ""
+        },
+        "meta": {
+          "status": "",
+          "elapsed": "",
+          "request_id": ""
+        }
+      }
+    },
+    {
+      "operation": "get_event_details",
+      "annotation": "get_event_details",
+      "title": "Get Event Details",
+      "description": "Retrieves the event details based on the event ID that you have specified.",
+      "category": "investigation",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Event ID",
+          "name": "event_id",
+          "type": "text",
+          "description": "Specify the event ID for which you want to fetch the details.",
+          "tooltip": "Specify the event ID for which you want to fetch the details.",
+          "required": true,
+          "visible": true,
+          "editable": true
+        }
+      ],
+      "output_schema": {
+        "event": {
+          "id": "",
+          "url": "",
+          "host": "",
+          "tags": [],
+          "text": "",
+          "title": "",
+          "id_str": "",
+          "payload": "",
+          "priority": "",
+          "resource": "",
+          "alert_type": "",
+          "monitor_id": "",
+          "device_name": "",
+          "date_happened": "",
+          "monitor_groups": []
+        },
+        "status": ""
+      }
+    },
+    {
+      "operation": "get_hosts",
+      "annotation": "get_hosts",
+      "title": "Get Hosts",
+      "description": "Retrieves detailed list of hosts for your organization based on the parameters that you have specified.",
+      "category": "investigation",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Filter",
+          "name": "filter",
+          "type": "text",
+          "description": "Specify the filter to search the results. eg - env:ci",
+          "tooltip": "Specify the filter to search the results. eg - env:ci",
+          "required": false,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Sort Field",
+          "name": "sort_field",
+          "type": "text",
+          "description": "Specify the field name to sort the hosts by this field.",
+          "tooltip": "Specify the field name to sort the hosts by this field.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Sort Order",
+          "name": "sort_dir",
+          "type": "select",
+          "description": "Specify the sorting order. You can choose from the following options: asc or desc.",
+          "tooltip": "Specify the sorting order. You can choose from the following options: asc or desc.",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "options": [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "title": "Offset",
+          "name": "start",
+          "type": "integer",
+          "description": "Specify the offset from which to retrieve the records.",
+          "tooltip": "Specify the offset from which to retrieve the records.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Limit",
+          "name": "count",
+          "type": "integer",
+          "description": "Specify the number of records that the operation should fetch per page. Maximum value can be 1000.",
+          "tooltip": "Specify the number of records that the operation should fetch per page. Maximum value can be 1000.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Start Datetime",
+          "name": "_from",
+          "type": "datetime",
+          "description": "Specify the start date from which to retrieve the records.",
+          "tooltip": "Specify the start date from which to retrieve the records.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Include Muted Hosts Data",
+          "name": "include_muted_hosts_data",
+          "type": "checkbox",
+          "description": "Specify whether to include information on the muted status of hosts.",
+          "tooltip": "Specify whether to include information on the muted status of hosts.",
+          "required": false,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Include Hosts Metadata",
+          "name": "include_hosts_metadata",
+          "type": "checkbox",
+          "description": "Specify whether to include additional metadata about the hosts (agent_version, machine, platform, processor, etc.).",
+          "tooltip": "Specify whether to include additional metadata about the hosts (agent_version, machine, platform, processor, etc.).",
+          "required": false,
+          "visible": true,
+          "editable": true
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "get_attachments",
+      "annotation": "get_attachments",
+      "title": "Get Attachments",
+      "description": "Retrieves the detailed list of attachments based on the incident ID that you have specified.",
+      "category": "investigation",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Incident ID",
+          "name": "incident_id",
+          "type": "text",
+          "description": "Specify the incident ID for which you want to fetch the attachments.",
+          "tooltip": "Specify the incident ID for which you want to fetch the attachments.",
+          "required": true,
+          "visible": true,
+          "editable": true
+        }
+      ],
+      "output_schema": {}
+    }
+  ]
+}

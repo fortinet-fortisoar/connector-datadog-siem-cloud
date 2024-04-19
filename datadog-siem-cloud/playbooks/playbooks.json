@@ -1,0 +1,1343 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "@type": "WorkflowCollection",
+      "name": "Sample - Datadog SIEM Cloud - 1.0.0",
+      "description": "Sample playbooks for \"Datadog SIEM Cloud\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
+      "visible": true,
+      "image": null,
+      "uuid": "b3b7a8a2-3d92-4f96-a7ff-4b698f890215",
+      "id": 151,
+      "deletedAt": null,
+      "importedBy": [],
+      "recordTags": [
+        "Datadog",
+        "datadog-siem-cloud"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Incident Details",
+          "aliasName": null,
+          "tag": "#Datadog SIEM Cloud",
+          "description": "Retrieves the incident details based on the incident ID that you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": null,
+          "collection": "/api/3/workflow_collections/b3b7a8a2-3d92-4f96-a7ff-4b698f890215",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/471cf6d1-8d5e-4673-847d-b401305a82b2",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Incident Details",
+              "description": null,
+              "arguments": {
+                "name": "Datadog SIEM Cloud",
+                "config": "''",
+                "params": {
+                  "incident_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "datadog-siem-cloud",
+                "operation": "get_incident_details",
+                "operationTitle": "Get Incident Details"
+              },
+              "status": null,
+              "top": "120",
+              "left": "188",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "80ab674a-629f-4d29-a6db-00a602bbadde"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "471cf6d1-8d5e-4673-847d-b401305a82b2"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Get Incident Details",
+              "targetStep": "/api/3/workflow_steps/80ab674a-629f-4d29-a6db-00a602bbadde",
+              "sourceStep": "/api/3/workflow_steps/471cf6d1-8d5e-4673-847d-b401305a82b2",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "4db85c16-bbc5-4b3d-8289-f57abc54392b"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "306de934-0b08-4721-b57f-c0854220c289",
+          "id": 2970,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Datadog",
+            "datadog-siem-cloud"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Attachments",
+          "aliasName": null,
+          "tag": "#Datadog SIEM Cloud",
+          "description": "Retrieves the detailed list of attachments based on the incident ID that you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": null,
+          "collection": "/api/3/workflow_collections/b3b7a8a2-3d92-4f96-a7ff-4b698f890215",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/05c041d6-bac9-41dc-8b07-ec180a8cfefb",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Attachments",
+              "description": null,
+              "arguments": {
+                "name": "Datadog SIEM Cloud",
+                "config": "''",
+                "params": {
+                  "incident_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "datadog-siem-cloud",
+                "operation": "get_attachments",
+                "operationTitle": "Get Attachments"
+              },
+              "status": null,
+              "top": "120",
+              "left": "188",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "19078fd0-e934-4b0d-a4d7-94163a84880f"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "05c041d6-bac9-41dc-8b07-ec180a8cfefb"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Get Attachments",
+              "targetStep": "/api/3/workflow_steps/19078fd0-e934-4b0d-a4d7-94163a84880f",
+              "sourceStep": "/api/3/workflow_steps/05c041d6-bac9-41dc-8b07-ec180a8cfefb",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "40392ac7-30af-467f-856d-12fda5c69188"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "4d8b28b6-80c1-4c90-9e96-8a6e5d4690f5",
+          "id": 2972,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Datadog",
+            "datadog-siem-cloud"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Hosts",
+          "aliasName": null,
+          "tag": "#Datadog SIEM Cloud",
+          "description": "Retrieves detailed list of hosts for your organization based on the parameters that you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": null,
+          "collection": "/api/3/workflow_collections/b3b7a8a2-3d92-4f96-a7ff-4b698f890215",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/fd1791a5-9225-4464-8ba8-d561d9998c67",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Hosts",
+              "description": null,
+              "arguments": {
+                "name": "Datadog SIEM Cloud",
+                "config": "''",
+                "params": {
+                  "_from": "",
+                  "count": "",
+                  "start": "",
+                  "filter": "",
+                  "sort_dir": "",
+                  "sort_field": "",
+                  "include_hosts_metadata": "",
+                  "include_muted_hosts_data": ""
+                },
+                "version": "1.0.0",
+                "connector": "datadog-siem-cloud",
+                "operation": "get_hosts",
+                "operationTitle": "Get Hosts"
+              },
+              "status": null,
+              "top": "120",
+              "left": "188",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "cb02d997-8a59-4a7c-a047-0f785a339039"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "fd1791a5-9225-4464-8ba8-d561d9998c67"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Get Hosts",
+              "targetStep": "/api/3/workflow_steps/cb02d997-8a59-4a7c-a047-0f785a339039",
+              "sourceStep": "/api/3/workflow_steps/fd1791a5-9225-4464-8ba8-d561d9998c67",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "07e5a2a2-6de8-4230-8cd2-10770d7529db"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "50ca30eb-aed6-4812-a2f6-458da3449bbf",
+          "id": 2973,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Datadog",
+            "datadog-siem-cloud"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Update Incident",
+          "aliasName": null,
+          "tag": "#Datadog SIEM Cloud",
+          "description": "Update an incident based on the parameters that you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": null,
+          "collection": "/api/3/workflow_collections/b3b7a8a2-3d92-4f96-a7ff-4b698f890215",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/acbb99c2-387e-4ed1-b437-c35204b0cb86",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "acbb99c2-387e-4ed1-b437-c35204b0cb86"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Update Incident",
+              "description": null,
+              "arguments": {
+                "name": "Datadog SIEM Cloud",
+                "config": "''",
+                "params": {
+                  "state": "",
+                  "title": "",
+                  "summary": "",
+                  "detected": "",
+                  "severity": "",
+                  "root_cause": "",
+                  "incident_id": "",
+                  "detection_method": "",
+                  "customer_impacted": "",
+                  "customer_impact_end": "",
+                  "customer_impact_scope": "",
+                  "customer_impact_start": ""
+                },
+                "version": "1.0.0",
+                "connector": "datadog-siem-cloud",
+                "operation": "update_incident",
+                "operationTitle": "Update Incident"
+              },
+              "status": null,
+              "top": "120",
+              "left": "188",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "9f88c1af-0793-4bf7-b83b-84f87b8e16a8"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Update Incident",
+              "targetStep": "/api/3/workflow_steps/9f88c1af-0793-4bf7-b83b-84f87b8e16a8",
+              "sourceStep": "/api/3/workflow_steps/acbb99c2-387e-4ed1-b437-c35204b0cb86",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "b147c423-ebff-46c8-abc0-7b0061ed126b"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "994ecf52-9d0d-4f22-aa46-c837be8300a6",
+          "id": 2974,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Datadog",
+            "datadog-siem-cloud"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Event Details",
+          "aliasName": null,
+          "tag": "#Datadog SIEM Cloud",
+          "description": "Retrieves the event details based on the event ID that you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": null,
+          "collection": "/api/3/workflow_collections/b3b7a8a2-3d92-4f96-a7ff-4b698f890215",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/533baff3-2393-4df5-ba09-ebd0a73f336d",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Event Details",
+              "description": null,
+              "arguments": {
+                "name": "Datadog SIEM Cloud",
+                "config": "''",
+                "params": {
+                  "event_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "datadog-siem-cloud",
+                "operation": "get_event_details",
+                "operationTitle": "Get Event Details"
+              },
+              "status": null,
+              "top": "120",
+              "left": "188",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "c7d26dab-faee-47df-aae6-9e43e6815a22"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "533baff3-2393-4df5-ba09-ebd0a73f336d"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Get Event Details",
+              "targetStep": "/api/3/workflow_steps/c7d26dab-faee-47df-aae6-9e43e6815a22",
+              "sourceStep": "/api/3/workflow_steps/533baff3-2393-4df5-ba09-ebd0a73f336d",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "4b9353c1-518e-44ee-9b8e-1b8e17f7da52"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "cceccf59-6350-4229-bcdf-1e60f1894241",
+          "id": 2976,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Datadog",
+            "datadog-siem-cloud"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Search Events",
+          "aliasName": null,
+          "tag": "#Datadog SIEM Cloud",
+          "description": "Search and retrieve the detailed list of events based on the parameters that you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": null,
+          "collection": "/api/3/workflow_collections/b3b7a8a2-3d92-4f96-a7ff-4b698f890215",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/1e6903df-f38c-4989-b5fe-b43ae9102eca",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Search Events",
+              "description": null,
+              "arguments": {
+                "name": "Datadog SIEM Cloud",
+                "config": "''",
+                "params": {
+                  "to": "",
+                  "from": "",
+                  "sort": "",
+                  "limit": "",
+                  "query": "",
+                  "cursor": "",
+                  "time_difference": ""
+                },
+                "version": "1.0.0",
+                "connector": "datadog-siem-cloud",
+                "operation": "search_events",
+                "operationTitle": "Search Events"
+              },
+              "status": null,
+              "top": "120",
+              "left": "188",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "8aa72c99-893e-40e2-bd8e-b4843f7fd770"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "1e6903df-f38c-4989-b5fe-b43ae9102eca"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Search Events",
+              "targetStep": "/api/3/workflow_steps/8aa72c99-893e-40e2-bd8e-b4843f7fd770",
+              "sourceStep": "/api/3/workflow_steps/1e6903df-f38c-4989-b5fe-b43ae9102eca",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "81557afb-07f5-40ff-959e-4862bbb3e97e"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "d0fab64f-0637-499f-b35e-a8f1480d52a9",
+          "id": 2977,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Datadog",
+            "datadog-siem-cloud"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "> Datadog > Fetch and Create",
+          "aliasName": null,
+          "tag": null,
+          "description": "Fetch and Create Incidents from Datadog.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1713349814,
+          "collection": "/api/3/workflow_collections/b3b7a8a2-3d92-4f96-a7ff-4b698f890215",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/e3aa0bac-dea5-4de8-ae30-ad53cad6b5de",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Configuration",
+              "description": null,
+              "arguments": {
+                "limit": "",
+                "offset": "",
+                "output_mode": "Return as a JSON",
+                "severity_map": "{\n    'SEV-1': {{'Severity'|picklist('Critical')}},\n    'SEV-2': {{'Severity'|picklist('High')}},\n    'SEV-3': {{'Severity'|picklist('Medium')}},\n    'SEV-4': {{'Severity'|picklist('Low')}},\n    'SEV-5': {{'Severity'|picklist('Minimal')}},\n}",
+                "pullTimeMacro": "DatadogLastPullTime_{{vars['audit_info']['cyops_playbook_iri'].split('/')[-1].replace('-','_')}}",
+                "alerts_type_map": "{}",
+                "currentPullTime": "{{arrow.utcnow().int_timestamp}}",
+                "alerts_state_map": "{}",
+                "alerts_status_map": "{}",
+                "customer_impacted": "",
+                "alerts_severity_map": "{}",
+                "fetch_all_incidents": "",
+                "alerts_ackSlaStatus_map": "{}",
+                "alerts_respSlaStatus_map": "{}",
+                "fetch_data_in_last_X_minutes": "10",
+                "alerts_escalatedtoincident_map": "{}"
+              },
+              "status": null,
+              "top": "165",
+              "left": "300",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "group": null,
+              "uuid": "780678f9-c25f-49c8-a545-10b6576b77d2"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Create Feed List",
+              "description": null,
+              "arguments": {
+                "fetched_data": "{{vars.steps.Fetch_Incidents}}"
+              },
+              "status": null,
+              "top": "840",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "group": null,
+              "uuid": "11f0616d-94ae-4af5-8b78-509d43d2a94a"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Create Record",
+              "description": null,
+              "arguments": {
+                "when": "{{vars.fetched_data.data.data.attributes.incidents | length > 0}}",
+                "for_each": {
+                  "item": "{{vars.fetched_data.data.data.attributes.incidents}}",
+                  "__bulk": true,
+                  "parallel": false,
+                  "condition": "",
+                  "batch_size": 100
+                },
+                "resource": {
+                  "name": "{{vars.item.data.attributes.title}}",
+                  "type": {
+                    "id": 216,
+                    "@id": "/api/3/picklists/574a6ee2-7265-4701-815e-cff83b053bce",
+                    "icon": null,
+                    "uuid": "574a6ee2-7265-4701-815e-cff83b053bce",
+                    "@type": "Picklist",
+                    "color": null,
+                    "display": "Other / Unknown",
+                    "@context": "/api/3/contexts/Picklist",
+                    "listName": "/api/3/picklist_names/a7087b9c-5660-495f-a8ac-c3b198ddb8c2",
+                    "itemValue": "Other / Unknown",
+                    "importedBy": [],
+                    "orderIndex": 19
+                  },
+                  "state": {
+                    "id": 187,
+                    "@id": "/api/3/picklists/a1bac09b-1441-45aa-ad1b-c88744e48e72",
+                    "icon": null,
+                    "uuid": "a1bac09b-1441-45aa-ad1b-c88744e48e72",
+                    "@type": "Picklist",
+                    "color": null,
+                    "display": "New",
+                    "@context": "/api/3/contexts/Picklist",
+                    "listName": "/api/3/picklist_names/2f9ed741-25fe-475a-9f12-64336288eebf",
+                    "itemValue": "New",
+                    "importedBy": [],
+                    "orderIndex": 0
+                  },
+                  "source": "Datadog",
+                  "status": {
+                    "id": 190,
+                    "@id": "/api/3/picklists/7de816ff-7140-4ee5-bd05-93ce22002146",
+                    "icon": null,
+                    "uuid": "7de816ff-7140-4ee5-bd05-93ce22002146",
+                    "@type": "Picklist",
+                    "color": null,
+                    "display": "Open",
+                    "@context": "/api/3/contexts/Picklist",
+                    "listName": "/api/3/picklist_names/33e964a9-d607-49f2-813c-7ce46141815a",
+                    "itemValue": "Open",
+                    "importedBy": [],
+                    "orderIndex": 1
+                  },
+                  "severity": "{% if vars.item.data.attributes.severity %}{{ vars.item.data.attributes.severity | resolveRange(vars.severity_map) }}{% endif %}",
+                  "sourceId": "{{vars.item.data.id}}",
+                  "__replace": "true",
+                  "sourcedata": "{{vars.item | toJSON}}",
+                  "ackSlaStatus": {
+                    "id": 432,
+                    "@id": "/api/3/picklists/72979f64-e8b9-4888-a965-957e0ec24818",
+                    "icon": null,
+                    "uuid": "72979f64-e8b9-4888-a965-957e0ec24818",
+                    "@type": "Picklist",
+                    "color": "#808080",
+                    "display": "Awaiting Action",
+                    "@context": "/api/3/contexts/Picklist",
+                    "listName": "/api/3/picklist_names/fe36a8f2-fcba-4221-b4ab-1081f596b153",
+                    "itemValue": "Awaiting Action",
+                    "importedBy": [],
+                    "orderIndex": 2
+                  },
+                  "respSlaStatus": {
+                    "id": 432,
+                    "@id": "/api/3/picklists/72979f64-e8b9-4888-a965-957e0ec24818",
+                    "icon": null,
+                    "uuid": "72979f64-e8b9-4888-a965-957e0ec24818",
+                    "@type": "Picklist",
+                    "color": "#808080",
+                    "display": "Awaiting Action",
+                    "@context": "/api/3/contexts/Picklist",
+                    "listName": "/api/3/picklist_names/fe36a8f2-fcba-4221-b4ab-1081f596b153",
+                    "itemValue": "Awaiting Action",
+                    "importedBy": [],
+                    "orderIndex": 2
+                  },
+                  "priorityWeight": 1,
+                  "escalatedtoincident": {
+                    "id": 344,
+                    "@id": "/api/3/picklists/2128a09c-153d-4db3-985d-de6be33deae5",
+                    "icon": null,
+                    "uuid": "2128a09c-153d-4db3-985d-de6be33deae5",
+                    "@type": "Picklist",
+                    "color": "#808080",
+                    "display": "No",
+                    "@context": "/api/3/contexts/Picklist",
+                    "listName": "/api/3/picklist_names/e131cc54-9ae4-43c9-b830-af6e331fe024",
+                    "itemValue": "No",
+                    "importedBy": [],
+                    "orderIndex": 1
+                  },
+                  "resolvedAutomatedly": false,
+                  "alertRemainingAckSLA": 0
+                },
+                "operation": "Overwrite",
+                "collection": "/api/3/upsert/alerts",
+                "__recommend": [],
+                "fieldOperation": {
+                  "recordTags": "Overwrite",
+                  "threatTypes": "Overwrite",
+                  "killChainPhases": "Overwrite"
+                },
+                "step_variables": []
+              },
+              "status": null,
+              "top": "975",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/2597053c-e718-44b4-8394-4d40fe26d357",
+              "group": null,
+              "uuid": "cb095a32-8860-4c3c-86e2-af6d23eaa740"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Fetch Incidents",
+              "description": null,
+              "arguments": {
+                "name": "Datadog SIEM Cloud",
+                "config": "eebc5e06-596e-44a9-985a-738395bad160",
+                "params": {
+                  "sort": "{{vars.sort}}",
+                  "limit": "{{vars.limit}}",
+                  "state": "{{vars.state}}",
+                  "offset": "{{vars.offset}}",
+                  "include": "{{vars.include}}",
+                  "severity": "{{vars.severity}}",
+                  "created_after": "{{vars.last_pull_time}}",
+                  "created_before": "{{vars.currentPullTime}}",
+                  "detection_method": "{{vars.detection_method}}",
+                  "customer_impacted": "{{vars.customer_impacted}}",
+                  "fetch_all_incidents": "{{vars.fetch_all_incidents}}"
+                },
+                "version": "1.0.0",
+                "connector": "datadog-siem-cloud",
+                "operation": "search_incidents",
+                "operationTitle": "Search Incidents",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "705",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "43b33f8f-1f07-4f40-9d1f-716039cb54bd"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Fetch Incidents with limit",
+              "description": null,
+              "arguments": {
+                "name": "Datadog SIEM Cloud",
+                "config": "eebc5e06-596e-44a9-985a-738395bad160",
+                "params": {
+                  "sort": "{{vars.sort}}",
+                  "limit": 5,
+                  "state": "{{vars.state}}",
+                  "offset": 0,
+                  "include": "{{vars.include}}",
+                  "severity": "{{vars.severity}}",
+                  "created_after": "{{vars.last_pull_time}}",
+                  "created_before": "{{vars.currentPullTime}}",
+                  "detection_method": "{{vars.detection_method}}",
+                  "customer_impacted": "{{vars.customer_impacted}}",
+                  "fetch_all_incidents": ""
+                },
+                "version": "1.0.0",
+                "connector": "datadog-siem-cloud",
+                "operation": "search_incidents",
+                "operationTitle": "Search Incidents",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "705",
+              "left": "475",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "379a23c1-9a7d-49b1-af60-9027f36f5a6f"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Macro Value",
+              "description": null,
+              "arguments": {
+                "params": {
+                  "iri": "/api/wf/api/dynamic-variable/?name={{vars.pullTimeMacro}}",
+                  "body": "",
+                  "method": "GET"
+                },
+                "version": "3.2.3",
+                "connector": "cyops_utilities",
+                "operation": "make_cyops_request",
+                "operationTitle": "FSR: Make FortiSOAR API Call",
+                "step_variables": []
+              },
+              "status": null,
+              "top": "300",
+              "left": "300",
+              "stepType": "/api/3/workflow_step_types/0109f35d-090b-4a2b-bd8a-94cbc3508562",
+              "group": null,
+              "uuid": "e7e83e3b-4ec0-4673-b54e-d4730fe51288"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Is data only for mapping",
+              "description": null,
+              "arguments": {
+                "conditions": [
+                  {
+                    "option": "Yes, For Mapping",
+                    "step_iri": "/api/3/workflow_steps/379a23c1-9a7d-49b1-af60-9027f36f5a6f",
+                    "condition": "{{ vars.request.env_setup == true }}",
+                    "step_name": "Fetch Incidents with limit"
+                  },
+                  {
+                    "option": "No, For Ingestion",
+                    "default": true,
+                    "step_iri": "/api/3/workflow_steps/43b33f8f-1f07-4f40-9d1f-716039cb54bd",
+                    "step_name": "Fetch Incidents"
+                  }
+                ],
+                "step_variables": []
+              },
+              "status": null,
+              "top": "570",
+              "left": "300",
+              "stepType": "/api/3/workflow_step_types/12254cf5-5db7-4b1a-8cb1-3af081924b28",
+              "group": null,
+              "uuid": "494accde-223a-4447-8e74-f79e37cc94c5"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Resolve Range",
+              "description": null,
+              "arguments": {
+                "last_pull_time": "{% if (vars.steps.Get_Macro_Value.data[\"hydra:member\"] | length) > 0%}{{vars.steps.Get_Macro_Value.data[\"hydra:member\"][0].value }}{% else %}{{arrow.utcnow().shift(minutes=-vars.fetch_data_in_last_X_minutes).int_timestamp}}{% endif %}"
+              },
+              "status": null,
+              "top": "435",
+              "left": "300",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "group": null,
+              "uuid": "ee07f0ac-8b50-402c-a931-ca14b0961660"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Return Sample Data",
+              "description": null,
+              "arguments": {
+                "data": "{{vars.steps.Fetch_Incidents_with_limit.data.data.attributes.incidents}}"
+              },
+              "status": null,
+              "top": "840",
+              "left": "475",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "group": null,
+              "uuid": "94f9b1be-2fe6-4ec6-b0df-88808a23b383"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Save Result",
+              "description": null,
+              "arguments": {
+                "macro_name": "{{vars.pullTimeMacro}}",
+                "updated_last_pull_time": "{{vars.currentPullTime}}"
+              },
+              "status": null,
+              "top": "1110",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "group": null,
+              "uuid": "606da4b3-ea01-42c5-8672-287536b667ab"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "__triggerLimit": true,
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  },
+                  "_configuration_schema": "[\n  {\n    \"title\":\"Pull Sample Incidents in Past X Minutes\",\n    \"name\":\"fetch_data_in_last_X_minutes\",\n    \"type\":\"text\",\n    \"tooltip\":\"Pull the incidents in the past X minutes. e.g. 14400 minutes are 10 days.\",\n    \"required\":true,\n    \"editable\":true,\n    \"visible\":true,\n    \"value\":14400\n  },\n  {\n          \"title\": \"State\",\n          \"name\": \"state\",\n          \"type\": \"select\",\n          \"description\": \"Specify the state of the incident to filter the results.\",\n          \"tooltip\": \"Specify the state of the incident to filter the results.\",\n          \"required\": false,\n          \"visible\": true,\n          \"editable\": true,\n          \"options\": [\n            \"Active\",\n            \"Stable\",\n            \"Resolved\"\n          ]\n        },\n        {\n          \"title\": \"Severity\",\n          \"name\": \"severity\",\n          \"type\": \"select\",\n          \"description\": \"Specify the state of the incident to filter the results.\",\n          \"tooltip\": \"Specify the state of the incident to filter the results.\",\n          \"required\": false,\n          \"visible\": true,\n          \"editable\": true,\n          \"options\": [\n            \"SEV-1 (Critical)\",\n            \"SEV-2 (High)\",\n            \"SEV-3 (Moderate)\",\n            \"SEV-4 (Low)\",\n            \"SEV-5 (Minor)\",\n            \"Unknown\"\n          ]\n        },\n        {\n          \"title\": \"Customer Impacted\",\n          \"name\": \"customer_impacted\",\n          \"type\": \"checkbox\",\n          \"description\": \"Select the checkbox to specify whether the incident caused customer impact.\",\n          \"tooltip\": \"Select the checkbox to specify whether the incident caused customer impact.\",\n          \"required\": false,\n          \"visible\": true,\n          \"editable\": true\n        },\n        {\n          \"title\": \"Detection Method\",\n          \"name\": \"detection_method\",\n          \"type\": \"select\",\n          \"description\": \"Specify how the incident was detected.\",\n          \"tooltip\": \"Specify how the incident was detected.\",\n          \"required\": false,\n          \"visible\": true,\n          \"editable\": true,\n          \"options\": [\n            \"Customer\",\n            \"Employee\",\n            \"Monitor\",\n            \"Other\",\n            \"Unknown\"\n          ]\n        },\n        {\n          \"title\": \"Sort\",\n          \"name\": \"sort\",\n          \"type\": \"select\",\n          \"description\": \"Specify the order in which incidents should be returned.\",\n          \"tooltip\": \"Specify the order in which incidents should be returned.\",\n          \"required\": false,\n          \"visible\": true,\n          \"editable\": true,\n          \"options\": [\n            \"Ascending\",\n            \"Descending\"\n          ]\n        },\n        {\n          \"title\": \"Include\",\n          \"name\": \"include\",\n          \"type\": \"select\",\n          \"description\": \"Specify which types of related objects should be included in the response.\",\n          \"tooltip\": \"Specify which types of related objects should be included in the response.\",\n          \"required\": false,\n          \"visible\": true,\n          \"editable\": true,\n          \"options\": [\n            \"Users\",\n            \"Attachments\"\n          ]\n        },\n        {\n          \"title\": \"Offset\",\n          \"name\": \"offset\",\n          \"type\": \"integer\",\n          \"description\": \"Specify the offset from which to retrieve the records.\",\n          \"tooltip\": \"Specify the offset from which to retrieve the records.\",\n          \"required\": false,\n          \"visible\": true,\n          \"editable\": true\n        },\n        {\n          \"title\": \"Limit\",\n          \"name\": \"limit\",\n          \"type\": \"integer\",\n          \"description\": \"Specify the number of records that the operation should fetch per page.\",\n          \"tooltip\": \"Specify the number of records that the operation should fetch per page.\",\n          \"required\": false,\n          \"visible\": true,\n          \"editable\": true\n        },\n        {\n          \"title\": \"Fetch All Incidents\",\n          \"name\": \"fetch_all_incidents\",\n          \"type\": \"checkbox\",\n          \"description\": \"Select the checkbox to fetch all incidents.\",\n          \"tooltip\": \"Select the checkbox to fetch all incidents.\",\n          \"required\": false,\n          \"visible\": true,\n          \"editable\": true\n        }\n]",
+                  "DatadogLastAlertPullTime": "DatadogAlertPullTime_{{vars['audit_info']['cyops_playbook_iri'].split('/')[-1].replace('-','_')}}"
+                },
+                "triggerOnSource": true,
+                "triggerOnReplicate": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "300",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "e3aa0bac-dea5-4de8-ae30-ad53cad6b5de"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Configuration -> Get Macro Value",
+              "targetStep": "/api/3/workflow_steps/e7e83e3b-4ec0-4673-b54e-d4730fe51288",
+              "sourceStep": "/api/3/workflow_steps/780678f9-c25f-49c8-a545-10b6576b77d2",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "f44eddf7-b838-4875-ae62-b8956cbb2556"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "name": "Create Feed List -> Create Record",
+              "targetStep": "/api/3/workflow_steps/cb095a32-8860-4c3c-86e2-af6d23eaa740",
+              "sourceStep": "/api/3/workflow_steps/11f0616d-94ae-4af5-8b78-509d43d2a94a",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "4d2db964-8ef3-41f5-a643-6c223f259a48"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "name": "Create Record2 -> Save Result",
+              "targetStep": "/api/3/workflow_steps/606da4b3-ea01-42c5-8672-287536b667ab",
+              "sourceStep": "/api/3/workflow_steps/cb095a32-8860-4c3c-86e2-af6d23eaa740",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "ea70b91f-239d-4cc5-aab6-68afaea44a3d"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "name": "Fetch Incidents -> Create Feed List",
+              "targetStep": "/api/3/workflow_steps/11f0616d-94ae-4af5-8b78-509d43d2a94a",
+              "sourceStep": "/api/3/workflow_steps/43b33f8f-1f07-4f40-9d1f-716039cb54bd",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "1d95221d-dbe7-41ce-b0bb-5e0b60337a75"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "name": "Fetch Incidents with limit -> Return Sample Data",
+              "targetStep": "/api/3/workflow_steps/94f9b1be-2fe6-4ec6-b0df-88808a23b383",
+              "sourceStep": "/api/3/workflow_steps/379a23c1-9a7d-49b1-af60-9027f36f5a6f",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "2e6b9ae9-674b-4c2f-a709-7f353954da06"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "name": "Get Macro Value -> Resolve Range",
+              "targetStep": "/api/3/workflow_steps/ee07f0ac-8b50-402c-a931-ca14b0961660",
+              "sourceStep": "/api/3/workflow_steps/e7e83e3b-4ec0-4673-b54e-d4730fe51288",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "8ddc6675-18c8-4e9e-805e-5a4e155ecfdb"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "name": "Is data only for mapping -> Copy of Fetch Incidents with limit",
+              "targetStep": "/api/3/workflow_steps/43b33f8f-1f07-4f40-9d1f-716039cb54bd",
+              "sourceStep": "/api/3/workflow_steps/494accde-223a-4447-8e74-f79e37cc94c5",
+              "label": "No, For Ingestion",
+              "isExecuted": false,
+              "group": null,
+              "uuid": "b06a74cd-fdc0-4469-b4f2-909ec8ad0a13"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "name": "Is data only for mapping -> Fetch Incidents with limit",
+              "targetStep": "/api/3/workflow_steps/379a23c1-9a7d-49b1-af60-9027f36f5a6f",
+              "sourceStep": "/api/3/workflow_steps/494accde-223a-4447-8e74-f79e37cc94c5",
+              "label": "Yes, For Mapping",
+              "isExecuted": false,
+              "group": null,
+              "uuid": "36bff816-da45-46e8-92d6-2bb716fe6d54"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "name": "Resolve Range -> Is data only for mapping",
+              "targetStep": "/api/3/workflow_steps/494accde-223a-4447-8e74-f79e37cc94c5",
+              "sourceStep": "/api/3/workflow_steps/ee07f0ac-8b50-402c-a931-ca14b0961660",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "e83b0117-61b0-4d73-950f-628ea8b847a9"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Configuration",
+              "targetStep": "/api/3/workflow_steps/780678f9-c25f-49c8-a545-10b6576b77d2",
+              "sourceStep": "/api/3/workflow_steps/e3aa0bac-dea5-4de8-ae30-ad53cad6b5de",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "1c2de9a9-0472-4202-858f-064875c1a7f1"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "e0f79f87-ead4-45cf-9132-890013ba49c5",
+          "id": 2980,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "create",
+            "Datadog",
+            "datadog-siem-cloud",
+            "dataingestion",
+            "fetch"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Datadog > Ingest",
+          "aliasName": null,
+          "tag": null,
+          "description": "Fetch Incidents from Datadog.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1713271489,
+          "collection": "/api/3/workflow_collections/b3b7a8a2-3d92-4f96-a7ff-4b698f890215",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/ff71fe44-9882-4464-943a-f82a7ee40371",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Fetch Incidents",
+              "description": null,
+              "arguments": {
+                "arguments": [],
+                "apply_async": false,
+                "step_variables": [],
+                "pass_parent_env": false,
+                "pass_input_record": false,
+                "workflowReference": "/api/3/workflows/e0f79f87-ead4-45cf-9132-890013ba49c5"
+              },
+              "status": null,
+              "top": "140",
+              "left": "200",
+              "stepType": "/api/3/workflow_step_types/74932bdc-b8b6-4d24-88c4-1a4dfbc524f3",
+              "group": null,
+              "uuid": "ae81d17e-83bf-49f6-be10-2fd7992e306c"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "40",
+              "left": "40",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "ff71fe44-9882-4464-943a-f82a7ee40371"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Update Pull Time",
+              "description": null,
+              "arguments": {
+                "params": {
+                  "macro": "{{vars.steps.Fetch_Incidents.macro_name}}",
+                  "value": "{{vars.steps.Fetch_Incidents.updated_last_pull_time}}"
+                },
+                "version": "3.2.3",
+                "connector": "cyops_utilities",
+                "operation": "updatemacro",
+                "operationTitle": "FSR: Create/Update Global Variables",
+                "step_variables": []
+              },
+              "status": null,
+              "top": "240",
+              "left": "360",
+              "stepType": "/api/3/workflow_step_types/0109f35d-090b-4a2b-bd8a-94cbc3508562",
+              "group": null,
+              "uuid": "03cfa4d9-5366-4081-93af-e1f2fd8e240d"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Fetch Indicators -> Update Pull Time",
+              "targetStep": "/api/3/workflow_steps/03cfa4d9-5366-4081-93af-e1f2fd8e240d",
+              "sourceStep": "/api/3/workflow_steps/ae81d17e-83bf-49f6-be10-2fd7992e306c",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "e949500b-82ef-46c7-98a7-a9205278a7ce"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Fetch Indicators",
+              "targetStep": "/api/3/workflow_steps/ae81d17e-83bf-49f6-be10-2fd7992e306c",
+              "sourceStep": "/api/3/workflow_steps/ff71fe44-9882-4464-943a-f82a7ee40371",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "0d0c19e9-0c0f-43a1-844d-b2ea59483667"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "e3e17c48-9910-42f4-bd70-a9e3bad8d34a",
+          "id": 2981,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Datadog",
+            "datadog-siem-cloud",
+            "dataingestion",
+            "ingest"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Search Incidents",
+          "aliasName": null,
+          "tag": "#Datadog SIEM Cloud",
+          "description": "Search and retrieve the detailed list of incidents based on the parameters that you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": null,
+          "collection": "/api/3/workflow_collections/b3b7a8a2-3d92-4f96-a7ff-4b698f890215",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/d396692c-515a-4a7f-a4a8-9d3b7857ee54",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Search Incidents",
+              "description": null,
+              "arguments": {
+                "name": "Datadog SIEM Cloud",
+                "config": "''",
+                "params": {
+                  "sort": "",
+                  "limit": "",
+                  "state": "",
+                  "offset": "",
+                  "include": "",
+                  "severity": "",
+                  "created_after": "",
+                  "created_before": "",
+                  "detection_method": "",
+                  "customer_impacted": "",
+                  "fetch_all_incidents": ""
+                },
+                "version": "1.0.0",
+                "connector": "datadog-siem-cloud",
+                "operation": "search_incidents",
+                "operationTitle": "Search Incidents"
+              },
+              "status": null,
+              "top": "120",
+              "left": "188",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "7c94e7a4-585a-4064-acdd-e733749cfd5d"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "d396692c-515a-4a7f-a4a8-9d3b7857ee54"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Search Incidents",
+              "targetStep": "/api/3/workflow_steps/7c94e7a4-585a-4064-acdd-e733749cfd5d",
+              "sourceStep": "/api/3/workflow_steps/d396692c-515a-4a7f-a4a8-9d3b7857ee54",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "75caf190-19dd-4b4a-9217-af4001c12ddc"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "e9639208-efd1-46ef-bc5f-5687fbb9e8dd",
+          "id": 2978,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Datadog",
+            "datadog-siem-cloud"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Incidents",
+          "aliasName": null,
+          "tag": "#Datadog SIEM Cloud",
+          "description": "Retrieves the detailed list of incidents based on the parameters that you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": null,
+          "collection": "/api/3/workflow_collections/b3b7a8a2-3d92-4f96-a7ff-4b698f890215",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/21217285-0fd4-4398-91df-349caf7b26b2",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Incidents",
+              "description": null,
+              "arguments": {
+                "name": "Datadog SIEM Cloud",
+                "config": "''",
+                "params": {
+                  "include": "",
+                  "page_size": "",
+                  "page_offset": ""
+                },
+                "version": "1.0.0",
+                "connector": "datadog-siem-cloud",
+                "operation": "get_incidents",
+                "operationTitle": "Get Incidents"
+              },
+              "status": null,
+              "top": "120",
+              "left": "188",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "41fc7536-3fcb-43ad-81dd-9e384bb569b2"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "21217285-0fd4-4398-91df-349caf7b26b2"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Get Incidents",
+              "targetStep": "/api/3/workflow_steps/41fc7536-3fcb-43ad-81dd-9e384bb569b2",
+              "sourceStep": "/api/3/workflow_steps/21217285-0fd4-4398-91df-349caf7b26b2",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "38d17a9e-046d-494c-8396-3429531cf825"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "f505f6df-942c-4690-8fc0-4906a676fe61",
+          "id": 2979,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Datadog",
+            "datadog-siem-cloud"
+          ]
+        }
+      ]
+    }
+  ],
+  "exported_tags": [
+    "Datadog",
+    "datadog-siem-cloud",
+    "create",
+    "dataingestion",
+    "fetch",
+    "ingest"
+  ]
+}
