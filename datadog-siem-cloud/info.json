@@ -1015,12 +1015,16 @@
         {
           "title": "Customer Impacted",
           "name": "customer_impacted",
-          "type": "checkbox",
+          "type": "select",
           "description": "Specify whether the incident caused customer impact.",
           "tooltip": "Specify whether the incident caused customer impact.",
           "required": false,
           "visible": true,
-          "editable": true
+          "editable": true,
+          "options": [
+            "True",
+            "False"
+          ]
         },
         {
           "title": "Detected Date",
@@ -1564,7 +1568,30 @@
           "editable": true
         }
       ],
-      "output_schema": {}
+      "output_schema": {
+        "data": [
+          {
+            "id": "",
+            "type": "",
+            "attributes": {
+              "modified": "",
+              "attachment": {
+                "title": "",
+                "document_url": ""
+              },
+              "attachment_type": ""
+            },
+            "relationships": {
+              "last_modified_by_user": {
+                "data": {
+                  "id": "",
+                  "type": ""
+                }
+              }
+            }
+          }
+        ]
+      }
     }
   ]
 }

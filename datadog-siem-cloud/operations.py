@@ -309,8 +309,12 @@ def get_attachments(config, params):
 
 
 def check_health_ex(config):
-    get_incidents(config, {"page_size": 1})
-    return True
+    try:
+        get_incidents(config, {"page_size": 1})
+        return True
+    except Exception as err:
+        logger.exception(f"Error in health check: {str(err)}")
+        raise ConnectorError(str(err))
 
 
 operations = {
