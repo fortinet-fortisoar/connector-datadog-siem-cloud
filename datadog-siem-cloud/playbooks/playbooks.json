@@ -3,8 +3,8 @@
   "data": [
     {
       "@type": "WorkflowCollection",
-      "name": "Sample - Datadog SIEM Cloud - 1.0.0",
-      "description": "Sample playbooks for \"Datadog SIEM Cloud\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
+      "name": "Sample - Datadog Cloud SIEM - 1.0.0",
+      "description": "Sample playbooks for \"Datadog Cloud SIEM\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
       "visible": true,
       "image": null,
       "uuid": "b3b7a8a2-3d92-4f96-a7ff-4b698f890215",
@@ -21,7 +21,7 @@
           "triggerLimit": null,
           "name": "Get Incident Details",
           "aliasName": null,
-          "tag": "#Datadog SIEM Cloud",
+          "tag": "#Datadog Cloud SIEM",
           "description": "Retrieves the incident details based on the incident ID that you have specified.",
           "isActive": false,
           "debug": false,
@@ -39,7 +39,7 @@
               "name": "Get Incident Details",
               "description": null,
               "arguments": {
-                "name": "Datadog SIEM Cloud",
+                "name": "Datadog Cloud SIEM",
                 "config": "''",
                 "params": {
                   "incident_id": ""
@@ -105,7 +105,7 @@
           "triggerLimit": null,
           "name": "Get Attachments",
           "aliasName": null,
-          "tag": "#Datadog SIEM Cloud",
+          "tag": "#Datadog Cloud SIEM",
           "description": "Retrieves the detailed list of attachments based on the incident ID that you have specified.",
           "isActive": false,
           "debug": false,
@@ -123,7 +123,7 @@
               "name": "Get Attachments",
               "description": null,
               "arguments": {
-                "name": "Datadog SIEM Cloud",
+                "name": "Datadog Cloud SIEM",
                 "config": "''",
                 "params": {
                   "incident_id": ""
@@ -189,7 +189,7 @@
           "triggerLimit": null,
           "name": "Get Hosts",
           "aliasName": null,
-          "tag": "#Datadog SIEM Cloud",
+          "tag": "#Datadog Cloud SIEM",
           "description": "Retrieves detailed list of hosts for your organization based on the parameters that you have specified.",
           "isActive": false,
           "debug": false,
@@ -207,7 +207,7 @@
               "name": "Get Hosts",
               "description": null,
               "arguments": {
-                "name": "Datadog SIEM Cloud",
+                "name": "Datadog Cloud SIEM",
                 "config": "''",
                 "params": {
                   "_from": "",
@@ -280,7 +280,7 @@
           "triggerLimit": null,
           "name": "Update Incident",
           "aliasName": null,
-          "tag": "#Datadog SIEM Cloud",
+          "tag": "#Datadog Cloud SIEM",
           "description": "Update an incident based on the parameters that you have specified.",
           "isActive": false,
           "debug": false,
@@ -316,7 +316,7 @@
               "name": "Update Incident",
               "description": null,
               "arguments": {
-                "name": "Datadog SIEM Cloud",
+                "name": "Datadog Cloud SIEM",
                 "config": "''",
                 "params": {
                   "state": "",
@@ -375,7 +375,7 @@
           "triggerLimit": null,
           "name": "Get Event Details",
           "aliasName": null,
-          "tag": "#Datadog SIEM Cloud",
+          "tag": "#Datadog Cloud SIEM",
           "description": "Retrieves the event details based on the event ID that you have specified.",
           "isActive": false,
           "debug": false,
@@ -393,7 +393,7 @@
               "name": "Get Event Details",
               "description": null,
               "arguments": {
-                "name": "Datadog SIEM Cloud",
+                "name": "Datadog Cloud SIEM",
                 "config": "''",
                 "params": {
                   "event_id": ""
@@ -459,7 +459,7 @@
           "triggerLimit": null,
           "name": "Search Events",
           "aliasName": null,
-          "tag": "#Datadog SIEM Cloud",
+          "tag": "#Datadog Cloud SIEM",
           "description": "Search and retrieve the detailed list of events based on the parameters that you have specified.",
           "isActive": false,
           "debug": false,
@@ -477,7 +477,7 @@
               "name": "Search Events",
               "description": null,
               "arguments": {
-                "name": "Datadog SIEM Cloud",
+                "name": "Datadog Cloud SIEM",
                 "config": "''",
                 "params": {
                   "to": "",
@@ -735,7 +735,7 @@
               "name": "Fetch Incidents",
               "description": null,
               "arguments": {
-                "name": "Datadog SIEM Cloud",
+                "name": "Datadog Cloud SIEM",
                 "config": "eebc5e06-596e-44a9-985a-738395bad160",
                 "params": {
                   "sort": "{{vars.sort}}",
@@ -769,7 +769,7 @@
               "name": "Fetch Incidents with limit",
               "description": null,
               "arguments": {
-                "name": "Datadog SIEM Cloud",
+                "name": "Datadog Cloud SIEM",
                 "config": "eebc5e06-596e-44a9-985a-738395bad160",
                 "params": {
                   "sort": "{{vars.sort}}",
@@ -1154,7 +1154,7 @@
           "triggerLimit": null,
           "name": "Search Incidents",
           "aliasName": null,
-          "tag": "#Datadog SIEM Cloud",
+          "tag": "#Datadog Cloud SIEM",
           "description": "Search and retrieve the detailed list of incidents based on the parameters that you have specified.",
           "isActive": false,
           "debug": false,
@@ -1172,7 +1172,7 @@
               "name": "Search Incidents",
               "description": null,
               "arguments": {
-                "name": "Datadog SIEM Cloud",
+                "name": "Datadog Cloud SIEM",
                 "config": "''",
                 "params": {
                   "sort": "",
@@ -1248,7 +1248,7 @@
           "triggerLimit": null,
           "name": "Get Incidents",
           "aliasName": null,
-          "tag": "#Datadog SIEM Cloud",
+          "tag": "#Datadog Cloud SIEM",
           "description": "Retrieves the detailed list of incidents based on the parameters that you have specified.",
           "isActive": false,
           "debug": false,
@@ -1266,7 +1266,7 @@
               "name": "Get Incidents",
               "description": null,
               "arguments": {
-                "name": "Datadog SIEM Cloud",
+                "name": "Datadog Cloud SIEM",
                 "config": "''",
                 "params": {
                   "include": "",
