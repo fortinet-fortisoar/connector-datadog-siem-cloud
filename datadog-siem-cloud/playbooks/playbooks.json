@@ -13,7 +13,7 @@
       "importedBy": [],
       "recordTags": [
         "Datadog",
-        "datadog-cloud-siem"
+        "datadog-siem-cloud"
       ],
       "workflows": [
         {
@@ -97,7 +97,7 @@
           "importedBy": [],
           "recordTags": [
             "Datadog",
-            "datadog-cloud-siem"
+            "datadog-siem-cloud"
           ]
         },
         {
@@ -181,7 +181,7 @@
           "importedBy": [],
           "recordTags": [
             "Datadog",
-            "datadog-cloud-siem"
+            "datadog-siem-cloud"
           ]
         },
         {
@@ -272,7 +272,7 @@
           "importedBy": [],
           "recordTags": [
             "Datadog",
-            "datadog-cloud-siem"
+            "datadog-siem-cloud"
           ]
         },
         {
@@ -367,7 +367,7 @@
           "importedBy": [],
           "recordTags": [
             "Datadog",
-            "datadog-cloud-siem"
+            "datadog-siem-cloud"
           ]
         },
         {
@@ -451,7 +451,7 @@
           "importedBy": [],
           "recordTags": [
             "Datadog",
-            "datadog-cloud-siem"
+            "datadog-siem-cloud"
           ]
         },
         {
@@ -541,7 +541,7 @@
           "importedBy": [],
           "recordTags": [
             "Datadog",
-            "datadog-cloud-siem"
+            "datadog-siem-cloud"
           ]
         },
         {
@@ -1029,7 +1029,7 @@
           "recordTags": [
             "create",
             "Datadog",
-            "datadog-cloud-siem",
+            "datadog-siem-cloud",
             "dataingestion",
             "fetch"
           ]
@@ -1144,7 +1144,7 @@
           "importedBy": [],
           "recordTags": [
             "Datadog",
-            "datadog-cloud-siem",
+            "datadog-siem-cloud",
             "dataingestion",
             "ingest"
           ]
@@ -1240,7 +1240,7 @@
           "importedBy": [],
           "recordTags": [
             "Datadog",
-            "datadog-cloud-siem"
+            "datadog-siem-cloud"
           ]
         },
         {
@@ -1326,7 +1326,7 @@
           "importedBy": [],
           "recordTags": [
             "Datadog",
-            "datadog-cloud-siem"
+            "datadog-siem-cloud"
           ]
         }
       ]
@@ -1334,7 +1334,7 @@
   ],
   "exported_tags": [
     "Datadog",
-    "datadog-cloud-siem",
+    "datadog-siem-cloud",
     "create",
     "dataingestion",
     "fetch",
