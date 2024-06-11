@@ -239,6 +239,9 @@ def update_incident(config, params):
 def search_events(config, params):
     ob = DataDog(config)
     params = build_params(params)
+    sort = params.get("sort") or "desc"
+    sort_data = {"asc": EventsSort.TIMESTAMP_ASCENDING, "desc": EventsSort.TIMESTAMP_DESCENDING}
+    sort_value = sort_data.get(sort)
 
     filter_params = {}
     query = params.get("query")
@@ -259,12 +262,12 @@ def search_events(config, params):
     cursor = params.get("cursor")
     limit and page_params.update(limit=limit)
     cursor and page_params.update(cursor=cursor)
-    logger.info(f"\nfilter_params: {filter_params}\ntime_params: {time_params}\npage_params: {page_params}")
+    logger.info(f"\nfilter_params: {filter_params}\ntime_params: {time_params}\npage_params: {page_params}\nsort_value: {sort_value}")
 
     body = EventsListRequest(
         filter=EventsQueryFilter(**filter_params),
         options=EventsQueryOptions(**time_params),
-        sort=params.get("sort") or EventsSort.TIMESTAMP_DESCENDING,
+        sort=sort_value,
         page=EventsRequestPage(**page_params),
     )
 
